@@ -16,6 +16,16 @@ const PostManCollections = () => {
         .then(res=>res.json())
         .then(data=>setInfo(data))
     },[info])
+
+    
+    const handleSearch = event => {
+        const searchText = event.target.value;
+
+        const matchedItem = info.filter(product => product.name.toLowerCase().includes(searchText.toLowerCase()));
+
+        setInfo(matchedItem);
+    }
+
     return (
       
         <Box sx={{ flexGrow: 1 }}>
@@ -25,7 +35,8 @@ const PostManCollections = () => {
       User List
       </Typography>
 
-      <TextField id="outlined-search" sx={{width:'50%'}} label="Search List" type="search" />
+      <TextField id="outlined-search"  onChange={handleSearch} sx={{width:'50%'}} label="Search List" type="search" />
+
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 6, sm: 12, md: 12 }}>
       {
                 info?.item?.map(post=><PostmanCollection

@@ -35,6 +35,8 @@ const Navigation = () => {
                 <NavLink style={{textDecoration:'none', color:'white'}} to='/profileView'><Button color="inherit">Profile</Button></NavLink>
                
                 <NavLink style={{textDecoration:'none', color:'white'}} to='/userList'><Button color="inherit">User-List</Button></NavLink>
+
+                {user.email && <span style={{ color: 'white' }}> {user.displayName} </span>}
       
              <Button style={{textDecoration:'none',color:'white', fontWeight:600}} onClick={logout} color="inherit">Logout</Button>
             </Box>
