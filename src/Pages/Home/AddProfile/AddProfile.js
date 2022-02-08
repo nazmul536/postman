@@ -43,9 +43,11 @@ const AddProfile = () => {
 
     return (
        
-        <Container>
-            <Navigation></Navigation>
+       
+           
         <Box sx={{ flexGrow: 1 }}>
+        <Navigation></Navigation>
+        <Container>
   <Grid container spacing={2}>
     <Grid sx={{mt:8}} item xs={12} md={6}>
         <Typography variant="body1" gutterBottom>
@@ -96,8 +98,9 @@ const AddProfile = () => {
       </Grid>
       
     </Grid>
+    </Container>
   </Box>
-        </Container>
+       
     );
 };
 

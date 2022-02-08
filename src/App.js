@@ -12,6 +12,7 @@ import ProfileView from './Pages/Home/ProfileView/ProfileView';
 import UpdateUsers from './Pages/Home/UpdateUsers/UpdateUsers';
 import AuthProvider from "./contexts/AuthProvider/AuthProvider";
 import PostManCollections from './Pages/Home/PostManCollections/PostManCollections';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -36,15 +37,15 @@ function App() {
          <Route  path='/profileView'>
          <ProfileView></ProfileView>
          </Route>
-         <Route  path='/userList'>
+         <PrivateRoute  path='/userList'>
         <PostManCollections></PostManCollections>
-         </Route>
+         </PrivateRoute>
          <Route  path='/register'>
          <Register></Register>
          </Route>
-         <Route path='/AddProfile'>
+         <PrivateRoute path='/AddProfile'>
         <AddProfile></AddProfile>
-         </Route>
+         </PrivateRoute>
          <Route path='/profiles/UpdateUsers/:id'>
         <UpdateUsers></UpdateUsers>
          </Route>
